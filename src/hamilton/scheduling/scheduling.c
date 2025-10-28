@@ -127,7 +127,7 @@ void execute_tasks_by_priority()
     /**
     * Sortierung der Aufgaben mit qsort()
     * Nicht wichtig wie das funktioniert, wir brauchen nur eine sortierte Liste
-    * Einfach Benutzen!
+    * Einfach Benutzen, sonst oben bei compare_tasks() schauen oder wenn's genauer sein soll unter /usr/include/stdlib.h
     */
     qsort(task_list, task_count, sizeof(Task), compare_tasks);
 
@@ -280,7 +280,7 @@ void execute_mlfq()
 			// Nach einer gewissen Zeit alles wieder auf die höchste Stufe setzen
             if (time_passed >= priority_boost) 
             {
-                printf("Prioritäten-Boost! Alle Tasks wieder in höchste Queue.\n");
+                printf("Prioritäten-Erneuern! Alle Tasks wieder in höchste Queue.\n");
                 for (int j = 0; j < task_count; j++)
                 {
                     if (time_remaining[j] > 0) 
