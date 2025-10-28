@@ -139,6 +139,7 @@ void execute_tasks_by_priority()
     for (int i = 0; i < task_count; i++) 
     {
         printf("[Prio %d]: %s\n", task_list[i].priority, task_list[i].message);
+        sleep(1);
     }
 }
 
