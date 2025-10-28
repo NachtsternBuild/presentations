@@ -17,7 +17,7 @@ void mitl()
 	* Fehlertoleranz 1.:
 	* erstes Zeichen wird gelesen
    	*/
-    scanf("%c", &weintraube);
+    scanf("%c", &weintraube[0]);
      
     /** 
     * Auswertung der Eingabe:
