@@ -60,13 +60,28 @@ const char *special_thanks[] = {
 
 static void on_entry_submitted(const gchar *text, gpointer user_data)
 {
-    g_print("User entered: %s\n", text);
+    const gchar *output_text;
+    const gchar *default_value = "Donald Duck"; 
+    
+    // check if gcar is empty
+    if (text == NULL || *text == '\0') 
+    {
+        // use default 
+        output_text = default_value;
+    } 
+    else 
+    {
+        // use user input
+        output_text = text;
+    }
+
+    g_print("User entered: %s\n", output_text);
 }
 
 static void open_name_dialog(GtkWidget *widget, gpointer stack)
 {
     show_entry_dialog(widget,
-                            "Eingabe Nutzername",
+                            "Eingabe Name",
                             "Bitte geben Sie unten Ihren Namen ein.:",
                             "Bestätigen",
                             "Abbrechen",
