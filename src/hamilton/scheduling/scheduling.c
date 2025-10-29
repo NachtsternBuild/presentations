@@ -107,7 +107,8 @@ void execute_first_come_first_served()
     for (int i = 0; i < task_count; i++) 
     {
         printf("Task %d: %s (Prio %d, Dauer %d)\n", i + 1, task_list[i].message, task_list[i].priority, task_list[i].time_required);
-        sleep(1);
+        // Simulation der Laufzeit
+        sleep(task_list[i].time_required);
     }
 }
 
@@ -139,7 +140,8 @@ void execute_tasks_by_priority()
     for (int i = 0; i < task_count; i++) 
     {
         printf("[Prio %d]: %s\n", task_list[i].priority, task_list[i].message);
-        sleep(1);
+        // Simulation der Laufzeit
+        sleep(task_list[i].time_required);
     }
 }
 
